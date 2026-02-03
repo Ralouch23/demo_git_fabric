@@ -1,4 +1,4 @@
-expression base_transacoes = "C:\Users\claud\Área de Trabalho\Recursos Aula Git Alison\transacoes.xlsx" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression base_transacoes = "D:\demo_git_fabric\Recursos Aula Git Alison\transacoes.xlsx" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: a0c3b9aa-91fa-48ad-a571-65d664faaa77
 	queryGroup: Parâmetros
 
