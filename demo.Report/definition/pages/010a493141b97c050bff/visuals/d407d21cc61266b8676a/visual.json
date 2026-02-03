@@ -2,18 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "d407d21cc61266b8676a",
   "position": {
-    "x": 822.78933054968,
-    "y": 117.72216575556961,
+    "x": 318.98909430541443,
+    "y": 145.57042002032802,
     "z": 0,
     "height": 381.0147515314672,
-    "width": 424.052962667912,
+    "width": 558.23091503447517,
     "tabOrder": 0
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -27,31 +27,63 @@
                 }
               },
               "queryRef": "calendario.Data",
-              "nativeQueryRef": "Data",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
+              "nativeQueryRef": "Data"
+            },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "cotacoes"
-                        }
-                      },
-                      "Property": "Cotacao"
+                    "SourceRef": {
+                      "Entity": "transacoes"
                     }
                   },
-                  "Function": 1
+                  "Property": "Valor Total"
                 }
               },
-              "queryRef": "Avg(cotacoes.Cotacao)",
-              "nativeQueryRef": "Average of Cotacao"
+              "queryRef": "transacoes.Valor Total",
+              "nativeQueryRef": "Valor Total"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cotacoes"
+                    }
+                  },
+                  "Property": "Cotação do dia"
+                }
+              },
+              "queryRef": "cotacoes.Cotação do dia",
+              "nativeQueryRef": "Cotação do dia"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "transacoes"
+                    }
+                  },
+                  "Property": "Cotação corrigida"
+                }
+              },
+              "queryRef": "transacoes.Cotação corrigida",
+              "nativeQueryRef": "Cotação corrigida"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "transacoes"
+                    }
+                  },
+                  "Property": "Total R$"
+                }
+              },
+              "queryRef": "transacoes.Total R$",
+              "nativeQueryRef": "Total R$"
             }
           ]
         }
@@ -76,42 +108,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8a9caf5f752aac06e0dc",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "calendario"
-              }
-            },
-            "Property": "Data"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "dc5a7f25aff4a5c58551",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "cotacoes"
-                  }
-                },
-                "Property": "Cotacao"
-              }
-            },
-            "Function": 1
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
